@@ -1,3 +1,5 @@
+<app-search></app-search>
+<app-tags></app-tags>
 <ul>
     <li *ngFor="let food of foods">
         <a routerLink="/food/{{food.id}}">
@@ -12,7 +14,7 @@
                 </span>
 
                 <div class="stars">
-                    
+                    <star-rating [stars]="food.stars"></star-rating>
                 </div>
 
                 <div class="product-item-footer">
