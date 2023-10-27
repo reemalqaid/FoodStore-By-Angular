@@ -1,6 +1,9 @@
 <header>
     <div class="container">
-        <a routerlink="/" class="logo">أحلى الفطائر</a>
+        
+        <a routerLink="/" class="logo">أحلى الفطائر</a>
+
+        
         <nav>
             <ul>
                 <li>
@@ -16,8 +19,8 @@
 
                 </li>
                 <li>
-                    <a routerLink=".cart-page">
-                        السلة <span>3</span>
+                    <a routerLink="./cart-page">
+                        السلة <span *ngIf="cartQuantity">{{cartQuantity}}</span>
                     </a>
                 </li>
             </ul>
