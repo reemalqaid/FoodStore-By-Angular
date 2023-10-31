@@ -11,12 +11,13 @@ export class TagsComponent implements OnInit{
 
   tags?: Tag[];
   constructor( foodService: FoodService){
-    this.tags = foodService.getAllTags();
+     foodService.getAllTags().subscribe(res=>{
+      this.tags = res;
+     });
   }
 
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
 }

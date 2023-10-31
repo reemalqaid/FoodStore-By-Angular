@@ -16,9 +16,17 @@ export class CartService {
    }
 
    addToCart(food:Food):void{
+    //to check if the item is already exisit
     let cartItem = this.cart.items.find( item => item.food.id === food.id)
-    if(cartItem)
+    if(cartItem){
+      //add one 
+     cartItem.quantity++;
+     //decrease the total price for the item
+     cartItem.price = cartItem.food.price*cartItem.quantity
+     this.setCartToLocalSorage();
     return
+    }
+    //create new item
   this.cart.items.push(new CartItem(food))
   this.setCartToLocalSorage();
    }
@@ -29,10 +37,11 @@ export class CartService {
    }
 
    changeQuantity( foodId: string, quantity: number){
+    
     let cartItem = this.cart.items.find(item=> item.food.id === foodId);
+    //if i didn't put these 2 lines there will be an error on the code
     if(!cartItem)
     return;
-
     cartItem.quantity = quantity;
     cartItem.price = quantity * cartItem.food.price;
     this.setCartToLocalSorage();

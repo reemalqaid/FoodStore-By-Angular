@@ -6,7 +6,7 @@ div{
   }
   
   input{
-    border-radius: 10rem 0 0 10rem;
+    border-radius: 0 10rem 10rem 0;
     border: none;
     height: 3rem;
     width: 20rem;
@@ -22,7 +22,7 @@ div{
     height: 3rem;
     width: 5rem;
     font-size: 1rem;
-    border-radius: 0 10rem 10rem 0;
+    border-radius:  10rem 0 0 10rem;
     border: none;
     background-color: #e72929;
     color: white;

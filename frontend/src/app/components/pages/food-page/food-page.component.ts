@@ -16,10 +16,17 @@ export class FoodPageComponent implements OnInit {
     private cartService: CartService ,private router:Router){
     activateRouter.params.subscribe((params)=>{
     if(params.id)
-    this.food = foodService.getFoodById(params.id);
-    }
-    )
+    // this.food = foodService.getFoodById(params.id);
+    // }
+    // )
 
+    if(params.id)
+    foodService.getFoodById(params.id).subscribe(res=>{
+     console.log(res);
+     this.food = res});
+   }
+
+    )
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');

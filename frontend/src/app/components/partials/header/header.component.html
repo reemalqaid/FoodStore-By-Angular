@@ -7,14 +7,14 @@
         <nav>
             <ul>
                 <li>
-                    <a routerLink="/login">تسجيل الدخول</a>
+                    <a routerLink="/login" *ngIf="!isAuth">تسجيل الدخول</a>
                 </li>
-                <li class="menu-container">
-                    <a routerLink="/dashboard"> Reem </a>
+                <li class="menu-container" *ngIf="isAuth">
+                    <a routerLink="/dashboard"> {{user.name}}</a>
                     <div class="menu">
                     <a routerLink="/profile">الصفحة الشخصية</a>
                     <a routerLink="/orders">الطلبات</a>
-                    <a  routerLink="/logout">تسجيل الخروج</a>
+                    <a  (click)="logout()">تسجيل الخروج</a>
                 </div>
 
                 </li>

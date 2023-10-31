@@ -8,8 +8,9 @@ export class CartItem{
     // quantity: number = 1;
     // price: number = this.food.price;
 
-    //we can replace this code to be more profissional by writing this:
 
+    
+    //we can replace this code to be more profissional by writing this:
     constructor(public food:Food){
     }
     quantity: number = 1;
